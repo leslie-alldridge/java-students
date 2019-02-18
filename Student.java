@@ -1,9 +1,9 @@
 import java.util.Scanner;
 /**
- * Write a description of class Student here.
+ * Student class where we define a student.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Leslie
+ * @version 1.0
  */
 public class Student
 {
@@ -11,10 +11,11 @@ public class Student
     private String firstName;
     private String lastName;
     private int gradeYear;
-    private int studentID;
+    private String studentID;
     private String courses;
     private int tuitionBalance;
-    private int costOfCourse = 600;
+    private static int costOfCourse = 600;
+    private static int id = 1000;
 
     /**
      * Constructor for objects of class Student
@@ -30,8 +31,17 @@ public class Student
         
         System.out.print("1 - First year\n2- Second year\n3- Third year\n4- Final year\nEnter student class level: ");
         this.gradeYear = in.nextInt();
-        System.out.println(firstName + " " + lastName + " " + gradeYear);
         
+        setStudentID();
+        
+        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
+        
+        
+    }
+    
+    private void setStudentID(){
+        id++;
+        this.studentID = gradeYear + "" + id;
     }
 
     /**
